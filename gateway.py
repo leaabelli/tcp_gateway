@@ -31,6 +31,7 @@ if __name__ == '__main__':
             connection, client_address = sock.accept()
         except:
             connection.close()
+            continue
         print(f'Open connection from [{client_address[0]}:{client_address[1]}]')
         while True:
             try:
