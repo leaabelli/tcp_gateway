@@ -1,7 +1,7 @@
 import socket
 import sys
 
-BIND_TCP_HOST = socket.gethostname()
+BIND_TCP_HOST = '0.0.0.0'
 BIND_TCP_SOCKET = 2021
 TCP_PKG_SIZE = 4092
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print('Socket created')
     # bind the socket to a public host, and a well-known port
-    server_address = ((socket.gethostname(), BIND_TCP_SOCKET))
+    server_address = ((BIND_TCP_HOST, BIND_TCP_SOCKET))
     
     try:
         a = sock.bind(server_address)
